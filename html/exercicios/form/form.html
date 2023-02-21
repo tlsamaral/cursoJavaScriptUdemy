@@ -1,0 +1,31 @@
+<h1>Formulario</h1>
+<form action="http://localhost:3003/usuarios" method="POST">
+    <input type="text" name="nome">
+    <input type="password">
+    <div>
+        <input type="radio" name="tipo" value="admnin">Admin
+        <input type="radio" name="tipo" value="regular">Regular
+        <input type="radio" name="tipo" value="professor">Professor
+    </div>
+    <div>
+        <input type="checkbox" name="ativo">Ativo
+    </div>
+    <select name="estado"> 
+        <option value="sp">SP</option>
+        <option value="rj">RJ</option>
+        <option value="mg">MG</option>
+    </select>
+
+    <select name="interesses" multiple>
+        <option value="js">JS</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+    </select>
+    <button>Incluir</button>
+</form>
+
+<style>
+    input{
+        display: inline;
+    }
+</style>

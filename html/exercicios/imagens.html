@@ -1,0 +1,103 @@
+<div wm-slide>
+
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem1.jpg" alt="Muro da cidade" width="513" height="342"
+            title="Muro da cidade por Tarso Bessa">
+    </p>
+    <p>
+        <img src="http://files.cod3r.com.br/curso-web/imagem2.gif" alt="Intro Cod3r" width="513" height="342"
+            title="Intro cod3r">
+    </p>
+    <p class="circular">
+        <img src="http://files.cod3r.com.br/curso-web/imagem3.png" alt="">
+    </p>
+    <p class="texto">
+        <img src="http://files.cod3r.com.br/curso-web/avatar.jpg" alt="avatar" height="50" align="left">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam alias tenetur nesciunt reprehenderit amet
+        dolorem quia eaque nulla corrupti asperiores modi laboriosam consequuntur culpa, ipsam quo. Voluptatum corrupti
+        praesentium sint!
+    </p>
+    <p class="cidade">
+
+    </p>
+    <p>
+        <picture>
+            <source srcset="http://files.cod3r.com.br/curso-web/logo-larga.png" media="(min-widht: 600px)">
+            <img src="http://files.cod3r.com.br/curso-web/logo-estreita.png" alt="logo">
+        </picture>
+    </p>
+</div>
+<style>
+    p {
+        position: absolute;
+        height: 400px;
+        width: 600px;
+        display: none;
+        transition: left 1s ease;
+    }
+
+    .circular {
+        width: 513px;
+        background-color: #444;
+        /* display: flex; */
+        justify-content: center;
+    }
+
+    .texto {
+        width: 400px;
+
+    }
+
+    .texto img {
+        margin-right: 12px;
+    }
+
+    .cidade {
+        width: 513px;
+        height: 342px;
+        background-image: url('http://files.cod3r.com.br/curso-web/imagem4.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    @keyframes slide {
+        from {
+            left: -600px;
+        }
+
+        to {
+            left: 1200px;
+        }
+    }
+</style>
+<script>
+    const newspaperSpinning = [
+        { transform: 'rotate(0) scale(1)' },
+        { transform: 'rotate(360deg) scale(0)' }
+    ];
+
+    const newspaperTiming = {
+        duration: 2000,
+        iterations: 1,
+    }
+    // for (let i of document.querySelector('[wm-slide]').children) {
+    //     do{
+    //         i.style.left = '-600px'
+    //         i.style.display = 'inline'
+    //         i.style.left = '1200px'
+    //         i.style.animation = 'slide 4s normal'
+    //     }
+    //     while(document.querySelector('[wm-slide]').children[i-1])
+    // }
+    for(let i=0;i<document.querySelector('[wm-slide]').children.length;i++){
+        do{
+            document.querySelector('[wm-slide]').children[i].style.left = '-600px'
+            document.querySelector('[wm-slide]').children[i].style.display = 'inline'
+            document.querySelector('[wm-slide]').children[i].style.left = '1200px'
+            document.querySelector('[wm-slide]').children[i].style.animation = 'slide 4s normal'
+        }
+        while(document.querySelector('[wm-slide]').children[i-1])
+    }
+
+</script>
