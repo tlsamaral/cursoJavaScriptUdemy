@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .cabecalho {
+            background: #444;
+            height: 80px;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }
+
+        .logo {
+            width: 300px;
+            height: 100%;
+            margin-right: 35px;
+        }
+
+        .logo a {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 250px;
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+
+        nav.menu {
+            width: 500px;
+            height: 100%;
+        }
+
+        nav.menu ul {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: row;
+            gap: 5px;
+            list-style: none;
+        }
+
+        nav.menu ul li {
+            height: 100%;
+            width: 80px;
+            padding: 7px 2px;
+        }
+
+        nav.menu ul li a {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #FFF;
+            font-family: Oswald, sans-serif;
+            font-size: 20px;
+        }
+
+        
+        .autenticacao {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-right: 25px;
+            position: absolute;
+            right: 0;
+        }
+        
+        .selecionado{
+            background-color: rgb(87, 125, 167);
+            color: #000;
+        }
+        .autenticacao a {
+            text-decoration: none;
+            color: #FFF;
+            font-family: Oswald, sans-serif;
+            font-size: 20px;
+        }
+
+        .autenticacao a.botao,
+        .autenticacao a.destaque {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 60%;
+            background: rgba(255, 0, 0, 0.738);
+            border-radius: 20px;
+        }
+
+        @media (max-width: 1000px) {
+            .autenticacao {
+                display: none;
+            }
+        }
+
+        @media (max-width: 615px) {
+            .menu {
+                display: none;
+            }
+
+            .menu-toggle {
+                position: absolute;
+                right: 20px;
+                top: 10px;
+                display: block;
+                height: 70%;
+                width: 40px;
+                cursor: pointer;
+                background: #828181;
+                outline: 0;
+                border: none;
+                color: #fff;
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="cabecalho">
+        <div class="logo">
+            <a href="#inicio">
+                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+            </a>
+        </div>
+        <button class="menu-toggle">
+            <i class="fa fa-lg fa-bars"></i>
+        </button>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="#inicio" wm-link="inicio">Início</a>
+                </li>
+                <li>
+                    <a href="#cursos" wm-link="cursos">Cursos</a>
+                </li>
+                <li>
+                    <a href="#sobre" wm-link="sobre">Sobre</a>
+                </li>
+                <li>
+                    <a href="#contato" wm-link="contato">Contato</a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="autenticacao">
+            <a href="#login">Login</a>
+            <a href="#registar" class="botao destaque">Registrar</a>
+        </aside>
+    </header>
+
+    <script>
+        window.onhashchange = function (e){
+            const oldUrl = e.oldURL.split('#')[1]
+            const newUrl = e.newURL.split('#')[1]
+            document.querySelector(`[wm-link='${oldUrl}']`).classList.remove('selecionado')
+            document.querySelector(`[wm-link='${newUrl}']`).classList.add('selecionado')
+        }
+    </script>
+</body>
+
+</html>
