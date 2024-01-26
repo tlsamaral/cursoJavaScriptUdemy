@@ -10,5 +10,45 @@
       "email": "maria@email.com",
       "id": 4
     }
+  ],
+  "posts": [
+    {
+      "title": "Post Title",
+      "body": "This is a post body.",
+      "id": 1
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "title": "testest",
+      "body": "teste",
+      "id": 8
+    },
+    {
+      "title": "testest",
+      "body": "teste 12121212121",
+      "id": 9
+    },
+    {
+      "title": "testest",
+      "body": "teste 12121212121 kkkkk",
+      "id": 10
+    }
   ]
 }
